@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const myRequest = new Request('http://localhost/flowers.jpg');
+
+const myURL = myRequest.url; // http://localhost/flowers.jpg
+const myMethod = myRequest.method; // GET
+const myCred = myRequest.credentials; // omit
+
+        fetch(myRequrest)
+        .then(response => {
+            if (reponse.status === 200) {
+                return response.json();
+            } else {
+                throw new Error('something wrong');
+            }
+        })
+        .then(response => {
+            console.debug(response);
+            //...
+        }).catch(error => {
+            console.error(error);
+        });
+    </script>
+</body>
+</html>

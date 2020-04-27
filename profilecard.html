@@ -110,7 +110,7 @@
     }
     
 </style>
-    <title>profile card</title>
+    <title>profilecard</title>
 </head>
 <body>
     
@@ -201,6 +201,37 @@
     <hr size="2" width="410" color="black">
 </div>
 
+<script>
+
+    fetch('profilecard.json').then(function (response) {
+        return response.json();
+    }).then(function (obj) {
+        console.log(JSON.stringify(obj));
+    }).catch(function (error) {
+        console.error('something went wrong with retrieving the people!');
+        console.error(error);
+    });
+
+// fetch('profilecard.json', {
+//   method: "POST",
+//   body: JSON.stringify({
+//       "dylan": {
+//     nickname: "김우석",
+//     introduce: "소개",
+//     url: "open.kakao.com/me/kws60001",
+//     phonenumber: "010-4010-1994",
+//     email: "a01040101994@gmail.com"
+//       }
+//   }),
+//   headers: {
+//     "Content-type": "application/json; charset=UTF-8"
+//   }
+// })
+//   .then(response => response.json())
+//   .then(json => console.log(json));
+
+
+</script>
 
 </body>
 </html>
