@@ -1,12 +1,29 @@
 {
+    "dylan" : 
+        {
+            "nickname": "김우석",
+            "introducetop": "개발자 지망생입니다.",
+            "urltop" :  "open.kakao.com/me/kws60001",
+            "contacttitle": "010-4010-1994",
+            "emailtitle": "a01040101994@gmail.com"
+         },
 
-"dylan" : 
-    {
-    "nickname": "김우석",
-    "introduce": "개발자 지망생입니다.",
-        "url" :  "open.kakao.com/me/kws60001",
-        "phonenumber": "010-4010-1994",
-        "email": "a01040101994@gmail.com"
-    }
+    "gen" : 
+         {
+             "nickname": "이수근",
+             "introducetop": "개그맨입니다.",
+             "urltop" :  "open.kakao.com/me/leesugen",
+             "contacttitle": "1577-1577",
+             "emailtitle": "gen15771577@gmail.com"
+          },
+    "empty" : 
+          {
+              "nickname": "<br>",
+              "introducetop": "<br>",
+              "urltop" :  "<br>",
+              "contacttitle": "<br>",
+              "emailtitle": "<br>"
+          }
+        
 }
 

@@ -113,7 +113,10 @@
     <title>profilecard</title>
 </head>
 <body>
-    
+    <button id="button1" onclick="button1_click;">dark</button>
+    <button id="button0" onclick="button4_click;">white</button>
+    <button id="button2" onclick="button2_click;">sugen</button>
+    <button id="button3" onclick="button3_click;">초기화</button>
 <div class="all">
     <div class = "top">
         <div class="ceiling">
@@ -149,7 +152,8 @@
         <div class="nickname">
             <div style="font-size: small;">닉네임 (1/20)</div>
             <div class="nickmiddle">
-                <img src="nickmiddle.png" width="20px;"; height="20px;">
+                
+                <div id="name"> </div>
                 <img src="nickx.png" width="20px;"; height="20px;">
             </div>
             <div class="line">
@@ -201,37 +205,97 @@
     <hr size="2" width="410" color="black">
 </div>
 
-<script>
+<script type="text/javascript">
 
-    fetch('profilecard.json').then(function (response) {
-        return response.json();
-    }).then(function (obj) {
-        console.log(JSON.stringify(obj));
-    }).catch(function (error) {
-        console.error('something went wrong with retrieving the people!');
-        console.error(error);
+        const result = fetch('profilecard.json')
+        .then(function (res) {
+            return res.json();
+        })
+        .catch(function (error) {
+            console.error('something went wrong with retrieving the people!');
+            console.error(error);
+        });
+        result.then(d => {
+        const { nickname } = d.dylan
+        document.querySelector('.nickmiddle').innerHTML = nickname;
+        const { introducetop } = d.dylan
+        document.querySelector('.introducetop').innerHTML = introducetop;
+        const { urltop } = d.dylan
+        document.querySelector('.urltop').innerHTML = urltop;
+        const { contacttitle } = d.dylan
+        document.querySelector('.contacttitle').innerHTML = contacttitle;
+        const { emailtitle } = d.dylan
+        document.querySelector('.emailtitle').innerHTML = emailtitle;
+
+        
     });
 
-// fetch('profilecard.json', {
-//   method: "POST",
-//   body: JSON.stringify({
-//       "dylan": {
-//     nickname: "김우석",
-//     introduce: "소개",
-//     url: "open.kakao.com/me/kws60001",
-//     phonenumber: "010-4010-1994",
-//     email: "a01040101994@gmail.com"
-//       }
-//   }),
-//   headers: {
-//     "Content-type": "application/json; charset=UTF-8"
-//   }
-// })
-//   .then(response => response.json())
-//   .then(json => console.log(json));
+    //-----------배경색 버튼---------
+    
+    var colorb = "black"
+        document.getElementById('button1').addEventListener("click", function(){
+        document.querySelector("body").style.background = colorb})
+    
+
+    /*
+    function onclick2(){
+        window.location.reload()
+    }
+
+    document.getElementById('button1').addEventListener('button1',onclick2);
+    */ 
+    var colorw = "white"
+        document.getElementById('button0').addEventListener("click", function(){
+        document.querySelector("body").style.background = colorw})
 
 
+
+    //-----------이수근 버튼----------
+    
+        document.getElementById('button2').addEventListener("click", function(){
+        
+        result.then(d => {
+        const { nickname } = d.gen
+        document.querySelector('.nickmiddle').innerHTML = nickname;
+        const { introducetop } = d.gen
+        document.querySelector('.introducetop').innerHTML = introducetop;
+        const { urltop } = d.gen
+        document.querySelector('.urltop').innerHTML = urltop;
+        const { contacttitle } = d.gen
+        document.querySelector('.contacttitle').innerHTML = contacttitle;
+        const { emailtitle } = d.gen
+        document.querySelector('.emailtitle').innerHTML = emailtitle;
+    });     
+    });
+       
+    //---------삭제 버튼-----
+
+        document.getElementById('button3').addEventListener("click", function(){
+        
+        result.then(d => {
+        const { nickname } = d.empty
+        document.querySelector('.nickmiddle').innerHTML = nickname;
+        const { introducetop } = d.empty
+        document.querySelector('.introducetop').innerHTML = introducetop;
+        const { urltop } = d.empty
+        document.querySelector('.urltop').innerHTML = urltop;
+        const { contacttitle } = d.empty
+        document.querySelector('.contacttitle').innerHTML = contacttitle;
+        const { emailtitle } = d.empty
+        document.querySelector('.emailtitle').innerHTML = emailtitle;
+    });     
+    });
+
+
+
+/*
+var body = document.getElementById('body');
+
+function bdc() {
+    body.style.background = body.value;
+}*/
 </script>
 
 </body>
 </html>
+
