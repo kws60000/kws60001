@@ -113,10 +113,10 @@
     <title>profilecard</title>
 </head>
 <body>
-    <button id="button1" onclick="button1_click;">dark</button>
-    <button id="button0" onclick="button4_click;">white</button>
-    <button id="button2" onclick="button2_click;">sugen</button>
-    <button id="button3" onclick="button3_click;">초기화</button>
+    <button type="button" id="button1">dark</button>
+    <button type="button" id="button0">white</button>
+    <button type="button" id="button2">sugen</button>
+    <button type="button" id="button3">초기화</button>
 <div class="all">
     <div class = "top">
         <div class="ceiling">
@@ -232,19 +232,11 @@
 
     //-----------배경색 버튼---------
     
-    var colorb = "black"
+        var colorb = "black"
         document.getElementById('button1').addEventListener("click", function(){
         document.querySelector("body").style.background = colorb})
     
-
-    /*
-    function onclick2(){
-        window.location.reload()
-    }
-
-    document.getElementById('button1').addEventListener('button1',onclick2);
-    */ 
-    var colorw = "white"
+        var colorw = "white"
         document.getElementById('button0').addEventListener("click", function(){
         document.querySelector("body").style.background = colorw})
 
